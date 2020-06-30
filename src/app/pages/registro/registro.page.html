@@ -1,0 +1,39 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <form onsubmit="processForm(event)">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Apallido<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Correo<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin">Crear Cuenta</ion-button>
+    </div>
+  </form>
+</ion-content>
+

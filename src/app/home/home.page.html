@@ -1,0 +1,56 @@
+<ion-header no-borde>
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item *ngFor="let f of fotitos" >
+        <ion-card  routerLink="/receta" >
+          <div class="contenedor">
+            <img [src]=f class="lista"/>
+            <ion-card-header>
+              <ion-card-subtitle>Narutito</ion-card-subtitle>
+              <ion-card-title>Capitulo 235</ion-card-title>
+            </ion-card-header>
+              <ion-card-content>
+               El medio capitulo ctm u.u
+             </ion-card-content>
+          </div>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+    
+  </ion-content>
+
+</ion-content> 
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="schedule">
+      <ion-icon name="calendar"></ion-icon>
+      <ion-label>Schedule</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="speakers">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Speakers</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Map</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+
+

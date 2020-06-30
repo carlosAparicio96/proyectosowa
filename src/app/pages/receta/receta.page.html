@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>receta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+      <img src='../../assets/images/zorro.jpg'>
+    </div>
+    <ion-title>ingredientes</ion-title>
+    <div>
+      <ion-item class=lista *ngFor="let ingrediente of ingredientes; index as i">
+        {{i+1}}- {{ingrediente}}
+    </ion-item>
+    </div>
+    <ion-title>Pasos</ion-title>
+    <div>
+      <ion-item *ngFor="let paso of pasos; index as i">
+        {{i+1}}- {{paso}}
+    </ion-item>
+    </div>
+    
+</ion-content>

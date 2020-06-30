@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-button expand="block" *ngFor="let c of componentes"
+              [routerLink]="c.redirectTo" detail>
+      <ion-icon slot="start" [name]="c.icon"></ion-icon>
+      <ion-label>{{ c.name }}</ion-label>
+    </ion-button>
+  </ion-list>
+
+
+</ion-content>
