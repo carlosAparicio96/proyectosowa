@@ -8,31 +8,35 @@
 </ion-header>
 
 <ion-content fullscreen>
-  <form onsubmit="processForm(event)">
+  <form [formGroup]="profileForm">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
         <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="nombre" ></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Apallido<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="apellido"></ion-input>
       </ion-item>
       
       <ion-item>
         <ion-label position="stacked">Correo<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="correo"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+        <ion-input required type="text" formControlName="contrasena"></ion-input>
       </ion-item>
     </ion-list>
 
     <div class="ion-padding">
-      <ion-button expand="block" type="submit" class="ion-no-margin">Crear Cuenta</ion-button>
+      <ion-button expand="block" class="ion-no-margin" (click)="pico()">Crear Cuenta</ion-button>
+    </div>
+
+    <div class="ion-padding">
+      <ion-button expand="block" class="ion-no-margin" (click)="pico()">Crear Cuenta</ion-button>
     </div>
   </form>
 </ion-content>

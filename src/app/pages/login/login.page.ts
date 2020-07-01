@@ -11,7 +11,7 @@ export class LoginPage implements OnInit {
     {
       icon: 'logo-react',
       name: 'Iniciar Sesion',
-      redirectTo: '/registro'
+      redirectTo: '/login'
     },
     {
       icon: 'logo-playstation',
