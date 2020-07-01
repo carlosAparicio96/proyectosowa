@@ -6,13 +6,27 @@
 
 <ion-content>
 
-  <ion-list>
-    <ion-button expand="block" *ngFor="let c of componentes"
-              [routerLink]="c.redirectTo" detail>
-      <ion-icon slot="start" [name]="c.icon"></ion-icon>
-      <ion-label>{{ c.name }}</ion-label>
-    </ion-button>
-  </ion-list>
+  <form [formGroup]="profileForm">
 
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">      
+      <ion-item>
+        <ion-label position="stacked">Correo<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="contrasena"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" class="ion-no-margin" (click)="login()">Iniciar sesión</ion-button>
+    </div>
+  </form>
+
+   <div class="ion-padding">
+      <ion-button expand="block" class="ion-no-margin" routerLink="/registro">Crear cuenta</ion-button>
+    </div>
 
 </ion-content>

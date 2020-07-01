@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { RecetaService } from '../../services/receta.service';
+import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
 
 
 
@@ -11,7 +12,7 @@ import { RecetaService } from '../../services/receta.service';
 })
 export class RegistroPage implements OnInit {
 
-  constructor(private fb: FormBuilder,private recetaService:RecetaService) { }
+  constructor(private fb: FormBuilder,private recetaService:RecetaService, private router: Router) { }
 
   profileForm = this.fb.group({
     nombre: ['', Validators.required],
@@ -20,16 +21,29 @@ export class RegistroPage implements OnInit {
     contrasena:['', Validators.required]
   });
 
-  pico(){
-    console.log("pico pal edi",this.profileForm.valid)
+  async insertUsuario(){
+    console.log("intento de crear usaurio",this.profileForm.valid)
     if(this.profileForm.valid){
-      this.recetaService.crearUsuario(this.profileForm.value)
+
+      var validar
+      await this.recetaService.crearUsuario(this.profileForm.value).then(result => {
+        
+        validar= result
+        if(validar.sucess==false){
+          alert("el usuario ya existe")
+        }
+        else{
+          this.router.navigate(['/login'])
+        }
+      })
+      console.log("soy el validar", validar)
     }
     else{
         alert("Falta rellenar algun campo")
     }
 
   }
+
 
   ngOnInit() {
   }
