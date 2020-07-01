@@ -13,7 +13,6 @@ const routes: Routes = [
     path: ':id/home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-
   {
     path: '',
     redirectTo: 'home',
@@ -34,7 +33,12 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'new-receta',
+    loadChildren: () => import('./pages/new-receta/new-receta.module').then( m => m.NewRecetaPageModule)
   }
+
 ];
 
 @NgModule({

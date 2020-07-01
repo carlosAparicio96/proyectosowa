@@ -1,6 +1,6 @@
 <ion-header no-borde>
   <ion-toolbar>
-    <ion-title>Lista</ion-title>
+    <ion-title>Recetas</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
             <img [src]=f class="lista"/>
             <ion-card-header>
               <ion-card-subtitle>Narutito</ion-card-subtitle>
-              <ion-card-title>Capitulo 235</ion-card-title>
+              <ion-card-title>Capitulo 422</ion-card-title>
             </ion-card-header>
               <ion-card-content>
                El medio capitulo ctm u.u
@@ -30,26 +30,21 @@
 
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="schedule">
-      <ion-icon name="calendar"></ion-icon>
-      <ion-label>Schedule</ion-label>
-      <ion-badge>6</ion-badge>
+    <ion-tab-button routerLink="/mis-recetas">
+      <ion-icon name="pizza-outline"></ion-icon>
+      <ion-label>Mis recetas</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
-      <ion-label>Speakers</ion-label>
+    <ion-tab-button routerLink="home">
+      <ion-icon name="restaurant-outline"></ion-icon>
+      <ion-label>Home</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="map">
-      <ion-icon name="map"></ion-icon>
-      <ion-label>Map</ion-label>
+    <ion-tab-button routerLink="/new-receta">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-label>Agregar Receta</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
-      <ion-label>About</ion-label>
-    </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>
 

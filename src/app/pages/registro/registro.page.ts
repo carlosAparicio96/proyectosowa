@@ -30,9 +30,10 @@ export class RegistroPage implements OnInit {
         
         validar= result
         if(validar.sucess==false){
-          alert("el usuario ya existe")
+          alert("El correo ingresado ya esta en uso")
         }
         else{
+          alert("Usuario Creado")
           this.router.navigate(['/login'])
         }
       })
