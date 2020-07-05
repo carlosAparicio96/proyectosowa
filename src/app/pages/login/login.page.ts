@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
 
   profileForm = this.fb.group({
     correo: ['', [Validators.required,Validators.email]],
-    contrasena:['', Validators.required]
+    password:['', Validators.required]
   });
 
   async login(){
@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
         
         validar= result
         if(validar.length != 0){
-          var id=result[0].id
+          var id=result[0].idUsuario
           var url=id+"/home"
           this.router.navigate([url])
         }
@@ -41,10 +41,6 @@ export class LoginPage implements OnInit {
     }
 
   }
-
-
-
-
 
 
   

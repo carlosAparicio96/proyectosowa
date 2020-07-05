@@ -15,10 +15,10 @@ export class RegistroPage implements OnInit {
   constructor(private fb: FormBuilder,private recetaService:RecetaService, private router: Router) { }
 
   profileForm = this.fb.group({
-    nombre: ['', Validators.required],
-    apellido: ['', Validators.required],
+    nombreUsr: ['', Validators.required],
     correo: ['', [Validators.required,Validators.email]],
-    contrasena:['', Validators.required]
+    password: ['', Validators.required],
+    usuario:['', Validators.required]
   });
 
   async insertUsuario(){

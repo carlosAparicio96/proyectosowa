@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const apiUrl = "http://localhost:9000/usuario/"
+const apiUrl = "http://localhost:3000/usuario/"
 
 @Injectable({
   providedIn: 'root'
@@ -88,9 +88,5 @@ export class RecetaService {
         )
     })
   }
-
-
-
-
 }
 
