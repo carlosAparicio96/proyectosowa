@@ -10,7 +10,7 @@ export class RecetaService {
 
   constructor(private http: HttpClient) { }
   
-
+//--USUARIO--//
   crearUsuario(data) {
     console.log(data)
 
@@ -63,6 +63,8 @@ export class RecetaService {
     })
   }
 
+  //--RECETAS--//
+
   crearReceta(data) {
     console.log(data)
 
@@ -88,5 +90,33 @@ export class RecetaService {
         )
     })
   }
+
+  obtenerIng(data) {
+    console.log(data)
+
+    return new Promise((resolve, reject) => {
+      this.http.post(
+        `${apiUrl}obtenerIng`,
+        data
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              console.log('response', response)
+              resolve(response)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+  
 }
+
 

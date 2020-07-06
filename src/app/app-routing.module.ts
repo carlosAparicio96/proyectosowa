@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AppModule } from './app.module';
-import { RecetaPageModule } from './pages/receta/receta.module';
 
 
 const routes: Routes = [
   {
-    path: 'receta',
+    path: ':id/receta',
     loadChildren: () => import('./pages/receta/receta.module').then(m => m.RecetaPageModule)
   },
   {
@@ -15,15 +14,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'mis-recetas',
+    path: ':id/mis-recetas',
     loadChildren: () => import('./pages/mis-recetas/mis-recetas.module').then( m => m.MisRecetasPageModule)
   },
   {
-    path: 'todas',
+    path: ':id/todas',
     loadChildren: () => import('./pages/todas/todas.module').then( m => m.TodasPageModule)
   },
   {
@@ -35,9 +34,13 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'new-receta',
+    path: ':id/new-receta',
     loadChildren: () => import('./pages/new-receta/new-receta.module').then( m => m.NewRecetaPageModule)
+  },  {
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   }
+
 
 ];
 

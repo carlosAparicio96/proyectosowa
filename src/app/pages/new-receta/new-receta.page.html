@@ -9,25 +9,37 @@
 
 <ion-content>
 
+  <form [formGroup]="profileForm">
+    
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+ 
+      <ion-item>
+        <ion-label position="stacked">Nombre de la receta<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="nombreRec" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">tipo de receta<ion-text color="danger">*</ion-text></ion-label>
+        <ion-select ok-text="Listo" cancel-text="Cancelar">
+          <ion-select-option value="dos">DOS</ion-select-option>
+          <ion-select-option value="lunix">Linux</ion-select-option>
+          <ion-select-option value="mac7">Mac OS 7</ion-select-option>
+          <ion-select-option value="mac8">Mac OS 8</ion-select-option>
+          <ion-select-option value="win3.1">Windows 3.1</ion-select-option>
+          <ion-select-option value="win95">Windows 95</ion-select-option>
+          <ion-select-option value="win98">Windows 98</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">descripcion<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" formControlName="descripcion"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" class="ion-no-margin" (click)="nuevaReceta()">Crear Receta</ion-button>
+    </div>
+  </form>
 </ion-content>
-
-
-<ion-tabs>
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button routerLink="/mis-recetas">
-      <ion-icon name="pizza-outline"></ion-icon>
-      <ion-label>Mis recetas</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button routerLink="home">
-      <ion-icon name="restaurant-outline"></ion-icon>
-      <ion-label>Home</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button routerLink="/new-receta">
-      <ion-icon name="add-outline"></ion-icon>
-      <ion-label>Agregar Receta</ion-label>
-    </ion-tab-button>
-
-  </ion-tab-bar>
-</ion-tabs>
