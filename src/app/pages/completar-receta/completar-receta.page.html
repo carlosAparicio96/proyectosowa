@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>completarReceta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  Agregar Ingredientes a tu receta    
+      <div class="dynamicModel">
+
+        <div *ngFor="let ing of ingDetalle">
+          <ion-select [(ngModel)]="ing.ingrediente" placeholder="Ingrediente"  ok-text="Listo" cancel-text="Cancelar">
+            <ion-select-option *ngFor="let c of ingredientes" value="{{ c.nombreIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
+          </ion-select>
+    
+          <input [(ngModel)]="ing.cantidad" type="text" value="" color="danger" placeholder="Cantidad">
+      
+          <button class="btn btn-primary btn-sm" *ngIf="ingDetalle.length>1" (click)="deleteItem(ing)">Eliminar</button>
+        </div>
+
+        <button class="btn btn-primary btn-sm" (click)="addItemIngrediente()">Agregar +</button>
+      </div>
+
+Agregar pasos de tu receta
+
+      <div class="dynamicModel">
+
+        <div *ngFor="let paso of pasoDetalle">
+    
+          <input [(ngModel)]="paso.cantidad" type="text" value="" color="danger" placeholder="describre el siguiente paso">
+      
+          <button class="btn btn-primary btn-sm" *ngIf="pasoDetalle.length>1" (click)="deleteItemPaso(paso)">Eliminar</button>
+        </div>
+
+        <button class="btn btn-primary btn-sm" (click)="addItemPasos()">Agregar +</button>
+      </div>
+
+<div>
+  <div class="ion-padding">
+    <ion-button expand="block" class="ion-no-margin" (click)="insertData()">Completar Receta</ion-button>
+  </div>
+</div>
+
+</ion-content>

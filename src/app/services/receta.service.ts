@@ -76,7 +76,7 @@ export class RecetaService {
         .subscribe(
           (response: any) => {
             try {
-              console.log('response', response)
+              console.log('Response', response)
               resolve(response)
             } catch (error) {
               console.log('error1', error)
@@ -91,13 +91,39 @@ export class RecetaService {
     })
   }
 
-  obtenerIng(data) {
+  completarReceta(data) {
     console.log(data)
 
     return new Promise((resolve, reject) => {
       this.http.post(
-        `${apiUrl}obtenerIng`,
+        `${apiUrl}terminarReceta`,
         data
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              console.log('Response', response)
+              resolve(response)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+
+
+  
+
+  obtenerIng() {
+    return new Promise((resolve, reject) => {
+      this.http.get(
+        `${apiUrl}obtenerIng`
       )
         .subscribe(
           (response: any) => {
