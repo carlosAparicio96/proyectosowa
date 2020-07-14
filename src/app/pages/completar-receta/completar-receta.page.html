@@ -1,33 +1,41 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>completarReceta</ion-title>
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Completa tu receta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
-  Agregar Ingredientes a tu receta    
+<ion-content class="opacity">
+  <ion-title>Ingredientes de tu receta </ion-title>
       <div class="dynamicModel">
 
-        <div *ngFor="let ing of ingDetalle">
-          <ion-select [(ngModel)]="ing.ingrediente" placeholder="Ingrediente"  ok-text="Listo" cancel-text="Cancelar">
-            <ion-select-option *ngFor="let c of ingredientes" value="{{ c.nombreIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
-          </ion-select>
-    
-          <input [(ngModel)]="ing.cantidad" type="text" value="" color="danger" placeholder="Cantidad">
-      
-          <button class="btn btn-primary btn-sm" *ngIf="ingDetalle.length>1" (click)="deleteItem(ing)">Eliminar</button>
+        <div *ngFor="let ing of ingDetalle" >
+          <div class="row">
+            <div class="col">
+            <ion-select [(ngModel)]="ing.ingrediente" placeholder="Ingrediente"  ok-text="Listo" cancel-text="Cancelar" >
+              <ion-select-option *ngFor="let c of ingredientes" value="{{ c.nombreIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
+            </ion-select>
+            
+            </div>
+          <div class="col">
+            <input [(ngModel)]="ing.cantidad" type="text" value="" color="danger" placeholder="Cantidad" >
+          </div>
+          </div>  
+
+          <button class="btn btn-primary btn-sm" class="derecha" *ngIf="ingDetalle.length>1" (click)="deleteItem(ing)">Eliminar</button>
         </div>
 
-        <button class="btn btn-primary btn-sm" (click)="addItemIngrediente()">Agregar +</button>
+        <button (click)="addItemIngrediente()">Agregar +</button>
       </div>
 
-Agregar pasos de tu receta
-
-      <div class="dynamicModel">
-
+<ion-text >Pasos de tu receta</ion-text>
+  <div class="dynamicModel">
         <div *ngFor="let paso of pasoDetalle">
-    
+
           <input [(ngModel)]="paso.descripcion" type="text" value="" placeholder="describre el siguiente paso"> <input [(ngModel)]="paso.nPaso" type="text" value="" placeholder="numero del paso">
       
           <button class="btn btn-primary btn-sm" *ngIf="pasoDetalle.length>1" (click)="deleteItemPaso(paso)">Eliminar</button>
@@ -36,10 +44,10 @@ Agregar pasos de tu receta
         <button class="btn btn-primary btn-sm" (click)="addItemPasos()">Agregar +</button>
       </div>
 
-<div>
+</ion-content>
+
+<ion-footer>
   <div class="ion-padding">
     <ion-button expand="block" class="ion-no-margin" (click)="insertData()">Completar Receta</ion-button>
   </div>
-</div>
-
-</ion-content>
+</ion-footer>

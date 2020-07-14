@@ -117,7 +117,7 @@ export class RecetaService {
     })
   }
 
-  completarPasos(data) {
+completarPasos(data) {
     console.log(data)
 
     return new Promise((resolve, reject) => {
