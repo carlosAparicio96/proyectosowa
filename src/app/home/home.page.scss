@@ -40,3 +40,8 @@
   display: inline-block;
   text-align: center;
 }
+.bg{
+  --background:none;
+  background-image: url(../../assets/images/fondo2.jpg);
+  background-size: 100% 100%;
+}

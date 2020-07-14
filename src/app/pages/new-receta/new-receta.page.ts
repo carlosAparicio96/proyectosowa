@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap, Routes, Params } from '@angular/router';
 import { RecetaService } from '../../services/receta.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-new-receta',
@@ -11,7 +12,7 @@ import { RecetaService } from '../../services/receta.service';
 export class NewRecetaPage implements OnInit {
 
   constructor(private fb: FormBuilder,private recetaService:RecetaService, private router: Router,
-    private ar: ActivatedRoute) { }
+    private ar: ActivatedRoute, private location: Location) { }
 
   
   ngOnInit() {
@@ -30,11 +31,13 @@ export class NewRecetaPage implements OnInit {
       var validar
       var idReceta
       var url
+      var idUs= this.ar.snapshot.params.id
+
       await this.recetaService.crearReceta(this.profileForm.value).then(result => {
         console.log(result)
         validar= result
         idReceta=validar.insertId
-        url=idReceta+"/completar-receta"
+        url=idUs+"/"+idReceta+"/completar-receta"
 
         if(validar.sucess==false){
           alert("La receta no se pudo crear")

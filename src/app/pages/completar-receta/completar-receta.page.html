@@ -28,7 +28,7 @@ Agregar pasos de tu receta
 
         <div *ngFor="let paso of pasoDetalle">
     
-          <input [(ngModel)]="paso.cantidad" type="text" value="" color="danger" placeholder="describre el siguiente paso">
+          <input [(ngModel)]="paso.descripcion" type="text" value="" placeholder="describre el siguiente paso"> <input [(ngModel)]="paso.nPaso" type="text" value="" placeholder="numero del paso">
       
           <button class="btn btn-primary btn-sm" *ngIf="pasoDetalle.length>1" (click)="deleteItemPaso(paso)">Eliminar</button>
         </div>

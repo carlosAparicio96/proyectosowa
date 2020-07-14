@@ -91,12 +91,38 @@ export class RecetaService {
     })
   }
 
-  completarReceta(data) {
+  completarIng(data) {
     console.log(data)
 
     return new Promise((resolve, reject) => {
       this.http.post(
-        `${apiUrl}terminarReceta`,
+        `${apiUrl}terminarIng`,
+        data
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              console.log('Response', response)
+              resolve(response)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+
+  completarPasos(data) {
+    console.log(data)
+
+    return new Promise((resolve, reject) => {
+      this.http.post(
+        `${apiUrl}terminarPasos`,
         data
       )
         .subscribe(
