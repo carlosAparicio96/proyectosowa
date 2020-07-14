@@ -2,22 +2,38 @@
 
 
 <ion-content>
-  <ion-textarea size="large" >
-    {{ variable2 }}
-    <ion-button  (click)="alerInputUsuario()">
-        <ion-icon name="pencil"></ion-icon>
-    </ion-button>
-  </ion-textarea>
+  <!-- Primer item Usuario-->
+  <div>
+  <ion-label name="LBUsuario" >
+    Usuario
+  </ion-label>
+    <ion-textarea size="large" >
+      {{ variable2 }}
+    </ion-textarea>
+      <ion-button  (click)="alerInputUsuario()">
+          <ion-icon name="pencil"></ion-icon>
+      </ion-button>
+  </div>
+  <!--  //////////////////////////////////  -->
+  <!-- Segundo item Correo-->
   <ion-textarea size="large">
     {{ variable3 }}
     <ion-button  (click)="alerInputCorreo()">
         <ion-icon name="pencil"></ion-icon>
     </ion-button>
   </ion-textarea>
+  <!--  //////////////////////////////////  -->
+   <!-- Segundo item Correo-->
   <ion-input size="large" type="password" >
     {{ variable4 }}
     <ion-button  (click)="alerInputPassword()" >
         <ion-icon name="pencil"></ion-icon>
     </ion-button>
   </ion-input>
+  <!--  //////////////////////////////////  -->
+  <!-- Imagen para cmabiar foto-->
+  <ion-button class="botonAvatar">
+    <img src="/assets/images/foto.jpg"> 
+  </ion-button>    
+  <!-- /////////////////////////////////////// -->
 </ion-content>
