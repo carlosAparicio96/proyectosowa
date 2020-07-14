@@ -42,7 +42,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: ':id/completar-receta',
+    path: ':id/:id/completar-receta',
     loadChildren: () => import('./pages/completar-receta/completar-receta.module').then( m => m.CompletarRecetaPageModule)
   }
 

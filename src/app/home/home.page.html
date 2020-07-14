@@ -4,9 +4,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg">
   esto es el home
 </ion-content> 
 
-
-
+<ion-tab-bar slot="bottom">
+  <ion-tab-button tab="music" (click)="misRecetas()">
+    <ion-label>Mis Recetas</ion-label>
+    <ion-icon name="restaurant-outline"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="movies" (click)="crearReceta()">
+    <ion-label>Crear</ion-label>
+    <ion-icon name="create-outline"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="games"(click)="explorar()">
+    <ion-label>Explorar</ion-label>
+    <ion-icon name="pizza-outline"></ion-icon>
+  </ion-tab-button>
+</ion-tab-bar>
