@@ -1,0 +1,23 @@
+<app-header [titulo]="titulos"></app-header>
+
+
+<ion-content>
+  <ion-textarea size="large" >
+    {{ variable2 }}
+    <ion-button  (click)="alerInputUsuario()">
+        <ion-icon name="pencil"></ion-icon>
+    </ion-button>
+  </ion-textarea>
+  <ion-textarea size="large">
+    {{ variable3 }}
+    <ion-button  (click)="alerInputCorreo()">
+        <ion-icon name="pencil"></ion-icon>
+    </ion-button>
+  </ion-textarea>
+  <ion-input size="large" type="password" >
+    {{ variable4 }}
+    <ion-button  (click)="alerInputPassword()" >
+        <ion-icon name="pencil"></ion-icon>
+    </ion-button>
+  </ion-input>
+</ion-content>
