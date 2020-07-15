@@ -46,6 +46,15 @@
         <button class="btn btn-primary btn-sm" (click)="addItemPasos()">Agregar +</button>
       </div>
 
+<ion-item>
+  <ion-label>Selecciona tu ingrediente</ion-label>
+  <ionic-selectable
+  [(ngModel)]="selectIng" [items]="ingredientes"
+  itemValuesField="idIngrediente" itemTextField="nombreIngrediente">
+ </ionic-selectable>
+</ion-item>
+
+
 </ion-content>
 
 <ion-footer>

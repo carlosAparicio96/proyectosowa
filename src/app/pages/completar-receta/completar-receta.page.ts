@@ -23,10 +23,13 @@ export class CompletarRecetaPage implements OnInit {
 
       this.ingredientes=result
     })
-    console.log(this.ar.snapshot.params.id)
+    console.log(this.ar.snapshot.params.id,this.ingredientes)
     this.addItemIngrediente(),
     this.addItemPasos()
   }
+
+  selectIng =null
+
   insertData(){
     if(this.ingDetalle.length>0){
       for(var i=0;i<this.ingDetalle.length;i++){

@@ -8,12 +8,15 @@ import { CompletarRecetaPageRoutingModule } from './completar-receta-routing.mod
 
 import { CompletarRecetaPage } from './completar-receta.page';
 
+import { IonicSelectableModule } from 'ionic-selectable';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CompletarRecetaPageRoutingModule
+    CompletarRecetaPageRoutingModule,
+    IonicSelectableModule
   ],
   declarations: [CompletarRecetaPage]
 })
