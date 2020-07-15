@@ -13,7 +13,7 @@ export class HomePage {
 
   constructor(private ar:ActivatedRoute, private router: Router) {}
 
-  idUs= this.ar.snapshot.params.id
+  idUs= this.ar.snapshot.params.id 
 
   misRecetas(){
     var url=this.idUs+'/mis-recetas'

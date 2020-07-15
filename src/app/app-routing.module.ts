@@ -48,7 +48,17 @@ const routes: Routes = [
   {
     path: 'usuario',
     loadChildren: () => import('./pages/usuario/usuario.module').then( m => m.UsuarioPageModule)
+  },
+  {
+    path: ':id/add-ingrediente-despensa',
+    loadChildren: () => import('./pages/add-ingrediente-despensa/add-ingrediente-despensa.module').then( m => m.AddIngredienteDespensaPageModule)
+  },
+  {
+    path: ':id/despensa',
+    loadChildren: () => import('./pages/despensa/despensa.module').then( m => m.DespensaPageModule)
   }
+
+
 
 
 ];
