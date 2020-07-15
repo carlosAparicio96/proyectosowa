@@ -1,0 +1,36 @@
+ion-content{
+    --background:none;
+    background-image: url(../../../assets/images/fondo4.jpg);
+    background-size: 100% 100%;
+  }
+
+  #tras{
+    opacity: 0.5;
+  }
+
+  .opacity{
+    width:200px;
+    height:70px;
+ }
+
+.textinv{
+  background-color: transparent;
+  border-style:none;
+  color:transparent;
+}
+.opacidad{
+  opacity: 0.9;;
+}
+
+.opacidad ion-label{
+  color: white;
+}
+
+.input-wrapper{
+  background-color: transparent;
+}
+ion-list.md.list-md.hydrated{
+  background-color: transparent;
+}
+
+

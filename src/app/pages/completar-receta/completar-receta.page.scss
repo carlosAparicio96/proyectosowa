@@ -1,5 +1,48 @@
+
+
 ion-content{
   --background:none;
-  background-image: url(../../../assets/images/fondo2.jpg);
+  background-image: url(../../../assets/images/fondo4.jpg);
   background-size: 100% 100%;
+}
+
+ion-footer{
+  opacity: 0.9;
+  background-color: black;
+}
+
+.opacidad{
+  opacity: 0;
+}
+
+.colors{
+  color: black;
+  width: 164px;
+  height: 45px;
+
+}
+.colors3{
+  color: black;
+  width: 80px;
+
+}
+.colors2{
+  color: black;
+  height: 100px;
+  width: 358px;
+
+}
+
+.center{
+  text-align: center;
+  text-decoration: underline #999966;  
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: #999966
+}
+.border{
+  border-style: groove;
+  border-color: black;
+  background-color: black;
+  opacity: .8;
 }

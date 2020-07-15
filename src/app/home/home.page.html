@@ -1,13 +1,36 @@
 <ion-header no-borde>
   <ion-toolbar>
     <ion-title>Recetas</ion-title>
+    <ion-icon size="large" name="menu-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="bg">
-  esto es el home
+  
 </ion-content> 
+<!-- Pruebas front javier -->
+<ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu" type="overlay">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title>Perfil</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
 
+
+
+<ion-router-outlet id="main"></ion-router-outlet>
+
+
+<!-- _________________________________________________________________  -->
 <ion-tab-bar slot="bottom">
   <ion-tab-button tab="music" (click)="misRecetas()">
     <ion-label>Mis Recetas</ion-label>
