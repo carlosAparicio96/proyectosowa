@@ -43,7 +43,7 @@ export class CompletarRecetaPage implements OnInit {
         })
       }
     }
-    alert("Su receta está completa, la encontrara en su modulo de mis recetas")
+    window.alert("Su receta está completa, la encontrara en su modulo de mis recetas")
     this.location.back();
     this.location.back();
   }

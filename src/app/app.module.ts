@@ -17,7 +17,7 @@ import { IonicSelectableModule } from 'ionic-selectable';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule,ReactiveFormsModule,IonicSelectableModule],
-  providers: [
+  providers: [ 
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

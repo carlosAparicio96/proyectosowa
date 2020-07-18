@@ -196,8 +196,93 @@ completarPasos(data) {
         )
     })
   }
+
+//--Carga datos para mostrar la receta--//
+
+getReceta(data) { //data= id de receta
+  console.log("Service get receta",data)
+
+  return new Promise((resolve, reject) => {
+    this.http.post(
+      `${apiUrl}getReceta`,
+      data
+    )
+      .subscribe(
+        (response: any) => {
+          try {
+            console.log('Response Service', response)
+            resolve(response)
+          } catch (error) {
+            console.log('error1', error)
+            reject(error)
+          }
+        },
+        error => {
+          console.log('error2', error)
+          reject(error)
+        }
+      )
+  })
+}
+
+getPasos(data) { //data= id de receta
+  console.log("Service get pasos",data)
+
+  return new Promise((resolve, reject) => {
+    this.http.post(
+      `${apiUrl}getPasos`,
+      data
+    )
+      .subscribe(
+        (response: any) => {
+          try {
+            console.log('Response', response)
+            resolve(response)
+          } catch (error) {
+            console.log('error1', error)
+            reject(error)
+          }
+        },
+        error => {
+          console.log('error2', error)
+          reject(error)
+        }
+      )
+  })
+}
+
+getIngReceta(data) { //data= id de receta
+  console.log("Service get ingredientes",data)
+
+  return new Promise((resolve, reject) => {
+    this.http.post(
+      `${apiUrl}getIngReceta`,
+      data
+    )
+      .subscribe(
+        (response: any) => {
+          try {
+            console.log('Response', response)
+            resolve(response)
+          } catch (error) {
+            console.log('error1', error)
+            reject(error)
+          }
+        },
+        error => {
+          console.log('error2', error)
+          reject(error)
+        }
+      )
+  })
+}
+
+
+
+
   
 }
+
 
 
 

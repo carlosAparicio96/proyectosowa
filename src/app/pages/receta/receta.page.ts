@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
+import { RecetaService } from '../../services/receta.service';
+import {Location} from '@angular/common';
+import { RecetaPageModule } from './receta.module';
 
 @Component({
   selector: 'app-receta',
@@ -7,40 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecetaPage implements OnInit {
 
-  fotoReceta = [
+  constructor(private recetaService:RecetaService, private router: Router, private ar: ActivatedRoute, private location: Location ) { }
 
-    '../../assets/images/zorro.jpg',
-    '../../assets/images/ojos.jpg',
-    '../../assets/images/pelea.jpg',
-    '../../assets/images/akatsuki.jpg',
- ];
+  receta: any[];
+  pasos: any[];
+  ingredientes:any[];
+  data = {idReceta: this.ar.snapshot.params.id}
 
- ingredientes = [
+  async ngOnInit() {
 
-    '2 panes',
-    '2 huevos',
-    'cuchara de aceite',
-    'pisca de sal',
-    'manajar a gusto',
- ];
+    console.log("antes de mandar la data",this.data)
+    await this.recetaService.getReceta(this.data).then(result => {
 
- pasos = [
-  
-    'pon el aceite en una sarten a fuego medio',
-    'esperamos que caliente el aceite unos minutos y vermitos los huevos y la sal a gusto',
-    'revoler con una cuchara de palo pa no rallar el maldito sarten',
-    'cocer hasta obtener la contextura deseada',
-    'mientras abre los panes :$ y en un tostador pon a calentar loh paneh pa mas placer',
-    'chantale los huevos revueltos encima del pan',
-    'sampale el manjar pa mucho mas placer',
+      this.receta.push(result);
+      console.log("despues de mandar la data",this.receta)
+    })
+    
+     await this.recetaService.getPasos(this.data).then(result => {
 
- ]
+      this.pasos.push(result);
+      console.log(this.pasos)
+    })
+    await this.recetaService.getIngReceta(this.data).then(result => {
 
-  constructor() { }
-
-  ngOnInit() {
-
-    /* window.alert('juanca sacate unos dos de los mal malditos pal loco gaby') */
+      this.ingredientes.push(result);
+      console.log(this.ingredientes)
+    })  
   }
-
 }
