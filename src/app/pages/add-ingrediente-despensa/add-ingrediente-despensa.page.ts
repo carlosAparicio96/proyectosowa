@@ -38,14 +38,14 @@ export class AddIngredienteDespensaPage implements OnInit {
   } 
 
   addItemIngrediente() {
-    var i
     let ingItem = {
-      ingrediente: '',   //esto debe ser el id del ingrediente
+      idIngred: '',   //esto debe ser el id del ingrediente
       cantidad: '',
-      id: new Date().getTime(),
-      idUsuario: this.ar.snapshot.params.id
+      idUsuario: this.ar.snapshot.params.id,
     }
+    
     this.listaIngredientes.push(ingItem); 
+    console.log(ingItem)
   }
 
   deleteItem(ing) {

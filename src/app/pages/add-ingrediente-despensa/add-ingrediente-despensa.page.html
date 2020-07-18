@@ -13,8 +13,8 @@
     <div *ngFor="let ing of listaIngredientes" class="border">
       <div class="row">
           <div class="col">
-            <ion-select [(ngModel)]="ing.ingrediente" placeholder="Ingrediente"  ok-text="Agregar" cancel-text="Cancelar" >
-              <ion-select-option *ngFor="let c of ingredientes" value="{{ c.nombreIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
+            <ion-select [(ngModel)]="ing.idIngred" placeholder="Ingrediente"  ok-text="Agregar" cancel-text="Cancelar" >
+              <ion-select-option *ngFor="let c of ingredientes" value="{{ c.idIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
             </ion-select>
           </div>
 
@@ -26,7 +26,7 @@
       <button class="btn btn-primary btn-sm" class="derecha" *ngIf="listaIngredientes.length>1" (click)="deleteItem(ing)">Eliminar</button>
     </div>
 
-    <button (click)="addItemIngrediente()">Agregar +</button>
+    <button (click)="addItemIngrediente()">Agregar +</button> 
   </div>
 
 </ion-content>

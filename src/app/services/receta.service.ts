@@ -171,7 +171,7 @@ completarPasos(data) {
 
   //--Despensa--//
 
-  addIngDespensa(data) {
+  addIngDespensa(data) { // data = ingredietes (idUsuario, idIngred,cantidad)
     console.log(data)
   
     return new Promise((resolve, reject) => {
