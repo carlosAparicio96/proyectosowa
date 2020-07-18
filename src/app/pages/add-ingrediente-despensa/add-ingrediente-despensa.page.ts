@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
 import { RecetaService } from '../../services/receta.service';
 import {Location} from '@angular/common';
+import { ValueAccessor } from '@ionic/angular/directives/control-value-accessors/value-accessor';
 
 @Component({
   selector: 'app-add-ingrediente-despensa',
@@ -32,11 +33,12 @@ export class AddIngredienteDespensaPage implements OnInit {
         })
       }
     }
-    alert("Ingrediente agregado a su despensa")
+    alert("Ingredientes agregado a su despensa")
     this.location.back();
-  }
+  } 
 
   addItemIngrediente() {
+    var i
     let ingItem = {
       ingrediente: '',   //esto debe ser el id del ingrediente
       cantidad: '',
@@ -52,5 +54,9 @@ export class AddIngredienteDespensaPage implements OnInit {
         this.listaIngredientes.splice(i, 1);
       }
     }
+  }
+
+  obtenerId(c){
+    return c.idIngrediente
   }
 }

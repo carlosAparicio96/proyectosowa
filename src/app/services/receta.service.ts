@@ -195,7 +195,7 @@ completarPasos(data) {
           }
         )
     })
-  }
+  } 
 
 //--Carga datos para mostrar la receta--//
 

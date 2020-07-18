@@ -11,22 +11,22 @@
   <form [formGroup]="profileForm">
     <ion-list lines="full" class="ion-no-margin ion-no-padding">
       <ion-item>
-        <ion-label position="stacked">Nombre<ion-text color="danger">*</ion-text></ion-label>
+        <ion-label position="floating">Nombre<ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" formControlName="nombreUsr" ></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Correo<ion-text color="danger">*</ion-text></ion-label>
+        <ion-label position="floating">Correo<ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" formControlName="correo"></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label position="stacked">Contraseña<ion-text color="danger">*</ion-text></ion-label>
-        <ion-input required type="text" formControlName="password"></ion-input>
+        <ion-label position="floating">Contraseña<ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="password" formControlName="password"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Nombre de usuario<ion-text color="danger">*</ion-text></ion-label>
+        <ion-label position="floating">Nombre de usuario<ion-text color="danger">*</ion-text></ion-label>
         <ion-input required type="text" formControlName="usuario"></ion-input>
       </ion-item>
     </ion-list>
