@@ -63,6 +63,32 @@ export class RecetaService {
     })
   }
 
+  obetenerUsuario (data) {
+    console.log(data)
+
+    return new Promise((resolve, reject) => {
+      this.http.post(
+        `${apiUrl}getUsuario`,
+        data
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              console.log('response', response)
+              resolve(response)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+
   //--RECETAS--//
 
   crearReceta(data) {

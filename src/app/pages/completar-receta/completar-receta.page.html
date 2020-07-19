@@ -39,7 +39,7 @@
         <div *ngFor="let paso of pasoDetalle">
 
             <input [(ngModel)]="paso.nPaso" class="colors3" type="text" value="" placeholder="N° paso">
-            <input [(ngModel)]="paso.descripcion" class="colors2" type="text" value="" placeholder="describe tu paso"> 
+            <textarea [(ngModel)]="paso.descripcion" class="colors2" type="text" value="" placeholder="describe tu paso"></textarea>
             
             <button class="btn btn-primary btn-sm" *ngIf="pasoDetalle.length>1" (click)="deleteItemPaso(paso)">Eliminar</button>
         </div>

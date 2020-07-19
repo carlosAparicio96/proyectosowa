@@ -22,6 +22,7 @@ export class NewRecetaPage implements OnInit {
     nombreRec: ['', Validators.required],
     tipoRec: ['', Validators.required],
     descripcion: ['', Validators.required],
+    fotoRec:['', Validators.required],
     idUsuario: this.ar.snapshot.params.id
   });
 

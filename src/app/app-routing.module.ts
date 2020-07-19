@@ -5,7 +5,7 @@ import { AppModule } from './app.module';
 
 const routes: Routes = [
   {
-    path: ':id/receta',
+    path: ':idUs/:id/receta',
     loadChildren: () => import('./pages/receta/receta.module').then(m => m.RecetaPageModule)
   },
   {
