@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <div class="dynamicModel">
 
     <div *ngFor="let ing of listaIngredientes" class="border">
@@ -19,7 +19,7 @@
           </div>
 
         <div class="col">
-          <input [(ngModel)]="ing.cantidad" class="colors" type="text" value="" color="danger" placeholder="Cantidad" >
+          <ion-input [(ngModel)]="ing.cantidad" class="colors" type="text" value="" placeholder="Cantidad" ></ion-input>
         </div>
       </div>  
 

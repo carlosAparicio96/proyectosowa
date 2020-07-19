@@ -223,6 +223,31 @@ completarPasos(data) {
     })
   } 
 
+  obtenerDespensa(idUsuario) { //data= id 
+    console.log(idUsuario)
+    return new Promise((resolve, reject) => {
+      this.http.get(
+        `${apiUrl}getIngredDespensa?idUsuario=${idUsuario}`
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              
+              resolve(response)
+              console.log('Response Despensa', response, idUsuario)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+
 //--Carga datos para mostrar la receta--//
 
 getReceta(data) { //data= id de receta

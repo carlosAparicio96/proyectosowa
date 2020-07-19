@@ -15,13 +15,19 @@ export class DespensaPage implements OnInit {
   constructor(private fb: FormBuilder,private recetaService:RecetaService, private router: Router, 
     private ar: ActivatedRoute, private location: Location) { }
 
-  idUs= this.ar.snapshot.params.id 
+  idUsuario = this.ar.snapshot.params.id;
+  despensa;
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.recetaService.obtenerDespensa(this.idUsuario).then(result => {
+
+      this.despensa=result;
+    });
+    console.log(this.ar.snapshot.params.id, this.despensa)
   }
 
   addIngredientesDespensa(){
-    var url=this.idUs+'/add-ingrediente-despensa'
+    var url=this.idUsuario+'/add-ingrediente-despensa'
     this.router.navigate([url])
   }
 
