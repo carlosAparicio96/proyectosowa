@@ -10,6 +10,7 @@ import { MethodCall } from '@angular/compiler';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
   idUs= this.ar.snapshot.params.id 
   menu: any;
   
@@ -17,7 +18,10 @@ export class HomePage {
 
   constructor(private ar:ActivatedRoute, private router: Router) {}
   
-  
+  miPerfil(){
+    var url=this.idUs+'/usuario'
+    this.router.navigate([url])
+  }
   miDespensa(){
     var url=this.idUs+'/despensa'
     this.router.navigate([url])
@@ -50,5 +54,6 @@ export class HomePage {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
   }
+  
 
 }
