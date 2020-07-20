@@ -41,19 +41,19 @@ export class HomePage {
     this.router.navigate([url])
   }
 
-  openFirst() {
+  /*openFirst() {
     this.menu.enable(true, 'first');
     this.menu.open('first');
   }
 
-  openEnd() {
+  /*openEnd() {
     this.menu.open('end');
-  }
+  }*/
 
-  openCustom() {
+  /*openCustom() {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
-  }
+  }*/
   
 
 }

@@ -29,6 +29,11 @@ export class DespensaPage implements OnInit {
     var url=this.idUsuario+'/add-ingrediente-despensa'
     this.router.navigate([url])
   }
+  goBack(){
+    var url=this.idUsuario+'/home'
+    this.router.navigate([url])
+    
+  }
 
   ingredienteEliminar(idIngred){
     let ingItem = {
