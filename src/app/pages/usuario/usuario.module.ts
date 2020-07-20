@@ -8,6 +8,7 @@ import { UsuarioPageRoutingModule } from './usuario-routing.module';
 
 import { UsuarioPage } from './usuario.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     FormsModule,
     IonicModule,
     UsuarioPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule
   ],
   declarations: [UsuarioPage]
 })

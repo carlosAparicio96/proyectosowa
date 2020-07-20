@@ -3,16 +3,20 @@
 
 <ion-content>
   <!-- Primer item Usuario-->
-  <div>
-  <ion-label name="LBUsuario" >
+  <div class="datosUsuario">
+    <ion-item>
+  <ion-label name="LBUsuario" position="fixed" >
     Usuario
   </ion-label>
-    <ion-textarea size="large" >
+  </ion-item>
+  <ion-item>
+    <ion-label position="undefined" >
       {{ variable2 }}
-    </ion-textarea>
-      <ion-button  (click)="alerInputUsuario()">
+    </ion-label >
+      <ion-button  (click)="alerInputUsuario()" size="small">
           <ion-icon name="pencil"></ion-icon>
       </ion-button>
+  </ion-item>   
   </div>
   <!--  //////////////////////////////////  -->
   <!-- Segundo item Correo-->
@@ -31,9 +35,14 @@
     </ion-button>
   </ion-input>
   <!--  //////////////////////////////////  -->
-  <!-- Imagen para cmabiar foto-->
-  <ion-button class="botonAvatar">
+  <!-- Imagen para cmabiar foto-
+  <ion-button class="button buttin5" >
     <img src="/assets/images/foto.jpg"> 
   </ion-button>    
-  <!-- /////////////////////////////////////// -->
+   /////////////////////////////////////// -->
+   <ion-item button (click)="alerInputCorreo()" class="Avatar">
+     <ion-avatar class="AvatarUsr">
+      <img src="/src/assets/images/ojos.jpg"> 
+    </ion-avatar>
+   </ion-item>
 </ion-content>

@@ -402,7 +402,31 @@ getIngReceta(data) { //data= id de receta
   })
 }
 
+NombreUsuario(data) {// id del usuario == data
+  console.log(data)
 
+  return new Promise((resolve, reject) => {
+    this.http.post(
+      `${apiUrl}BuscarNombreUsuario`,
+      data
+    )
+      .subscribe(
+        (response: any) => {
+          try {
+            console.log('Response', response)
+            resolve(response)
+          } catch (error) {
+            console.log('error1', error)
+            reject(error)
+          }
+        },
+        error => {
+          console.log('error2', error)
+          reject(error)
+        }
+      )
+  })
+}
 
 
   

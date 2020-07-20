@@ -46,7 +46,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/completar-receta/completar-receta.module').then( m => m.CompletarRecetaPageModule)
   },
   {
-    path: 'usuario',
+    path: ':id/usuario',
     loadChildren: () => import('./pages/usuario/usuario.module').then( m => m.UsuarioPageModule)
   },
   {
@@ -56,7 +56,7 @@ const routes: Routes = [
   {
     path: ':id/despensa',
     loadChildren: () => import('./pages/despensa/despensa.module').then( m => m.DespensaPageModule)
-  }
+  },
 
 
 

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
+import {Location} from '@angular/common';
+import { RecetaService } from 'src/app/services/receta.service';
 
 @Component({
   selector: 'app-usuario',
@@ -11,16 +14,18 @@ export class UsuarioPage implements OnInit {
   titulos ="UsuarioN"; // Nombre de la  cabecera
 
   Usuario ="NombreU";
-  variable2 = "Usuario";
+  NombreUsuario;
   variable3 = "Correo";
   variable4 = "pass";
-  constructor(public alertCtr: AlertController) {}
+  id =this.ar.snapshot.params.id;
+  constructor(private recetaService:RecetaService, public alertCtr: AlertController,private router: Router, private ar: ActivatedRoute, private location: Location) {
+    this.NombreUsuario = this.recetaService.NombreUsuario(this.id).then((result:any) => {(result);})}
 
   
 // Alerta con 1 input ----------------------------------------
   async alerInputUsuario(){
     const alertInp = await this.alertCtr.create({
-      header: this.variable2,
+      header: this.NombreUsuario,
       subHeader: "cambiar nombre" ,
       inputs: [
         {
@@ -40,7 +45,7 @@ export class UsuarioPage implements OnInit {
           text: 'Ok',
           handler: ( data ) => {
             console.log('Confirm Cancel:', data);
-            this.variable2 = data.InputUsuario;
+            this.NombreUsuario = data.InputUsuario;
           }
         }
       ]
@@ -53,7 +58,7 @@ export class UsuarioPage implements OnInit {
   async alerInputCorreo(){
     const alertInp = await this.alertCtr.create({
       header: this.variable3,
-      subHeader: "cambiar nombre" ,
+      subHeader: "cambiar correo" ,
       inputs: [
         {
           name: 'InputCorreo',
@@ -85,7 +90,7 @@ export class UsuarioPage implements OnInit {
   async alerInputPassword(){
     const alertInp = await this.alertCtr.create({
       header: this.variable4,
-      subHeader: "cambiar nombre" ,
+      subHeader: "cambiar Password" ,
       inputs: [
         {
           name: 'InputAntiguaPass',
@@ -125,11 +130,10 @@ export class UsuarioPage implements OnInit {
     await alertInp.present();
   }
   //---------------------------------------------
-
-  ngOnInit() {
-  }
   // Compara 2 string y regresa si es verdadero o falso
   CompararString(TextoNum1 : String, TextoNum2 : String){
     return TextoNum1 === TextoNum2;
   } 
+  ////////////////////////////////////////////
+  ngOnInit() {}
 }

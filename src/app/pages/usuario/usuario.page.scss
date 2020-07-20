@@ -1,0 +1,36 @@
+.datosUsuario {
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    /* align-items por defecto tiene el valor `stretch` */
+    align-items: center;
+    /*descomenta para disponer en columna*/
+    /*flex-direction: column;*/
+    /*flex-wrap: wrap;*/
+    flex-direction: column; 
+}
+.Avatar {
+    display: flex;
+    justify-content: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    border: 1px solid red;
+}
+
+ion-avatar {  
+        width:100% !important;  
+        height : 100% !important;  
+        max-width: 130px !important;  //any size
+        max-height: 130px !important; //any size 
+}
+
+ion-avatar img  {
+    width: auto !important;
+    height : auto !important;
+    max-width: auto !important;  //any size
+    max-height: auto !important; //any size
+    overflow: hidden !important;
+    justify-items: center;
+    }
+    
