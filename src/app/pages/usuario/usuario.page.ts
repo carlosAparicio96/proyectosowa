@@ -15,8 +15,8 @@ export class UsuarioPage implements OnInit {
   titulos ="Usuario"; // Nombre de la  cabecera
 
   NombreUsuario ;
-  CorreoUsuario = "Correo";
-  PasswordUsuario = "pass";
+  CorreoUsuario ;
+  PasswordUsuario ;
   id =this.fb.group({
     idUsuario: Number(this.ar.snapshot.params.id)
   });
@@ -24,7 +24,8 @@ export class UsuarioPage implements OnInit {
   
   constructor(private fb: FormBuilder,private recetaService:RecetaService, public alertCtr: AlertController,private router: Router, private ar: ActivatedRoute, private location: Location) {
     this.recetaService.NombreUsuario(this.id.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);})
-
+    this.recetaService.CorreoUsuario(this.id.value).then((result:any) => {this.CorreoUsuario=(result[0].correo);})
+    this.recetaService.PasswordUsuario(this.id.value).then((result:any) => {this.PasswordUsuario=(result[0].password);})
   }
 // Alerta con 1 input ----------------------------------------
   async alerInputUsuario(){
@@ -49,7 +50,11 @@ export class UsuarioPage implements OnInit {
           text: 'Ok',
           handler: ( data ) => {
             console.log('Confirm Cancel:', data);
-            this.NombreUsuario = data.InputUsuario;
+            var datos = this.fb.group({
+              nombreUsr: data.InputUsuario,
+              idUsuario: Number(this.ar.snapshot.params.id)
+            })
+            this.recetaService.ModificarNombredUsuario(datos.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);})
           }
         }
       ]
