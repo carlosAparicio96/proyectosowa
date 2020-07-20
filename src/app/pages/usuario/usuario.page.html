@@ -1,17 +1,24 @@
+
 <app-header [titulo]="titulos"></app-header>
 
-
-<ion-content>
+<ion-content class="bg">
+  <div class="datosUsuario">
+  <ion-item button (click)="alerInputCorreo()" class="Avatar">
+    <ion-avatar class="AvatarUsr">
+     <img src="/src/assets/images/foto.jpg"> 
+   </ion-avatar>
+  </ion-item>
+  </div>
   <!-- Primer item Usuario-->
   <div class="datosUsuario">
     <ion-item>
-  <ion-label name="LBUsuario" position="fixed" >
+  <ion-label   >
     Usuario
   </ion-label>
   </ion-item>
   <ion-item>
-    <ion-label position="undefined" >
-      {{ variable2 }}
+    <ion-label  >
+      {{ NombreUsuario }}
     </ion-label >
       <ion-button  (click)="alerInputUsuario()" size="small">
           <ion-icon name="pencil"></ion-icon>
@@ -20,29 +27,38 @@
   </div>
   <!--  //////////////////////////////////  -->
   <!-- Segundo item Correo-->
-  <ion-textarea size="large">
-    {{ variable3 }}
-    <ion-button  (click)="alerInputCorreo()">
-        <ion-icon name="pencil"></ion-icon>
-    </ion-button>
-  </ion-textarea>
+  <div class="datosUsuario">
+    <ion-item>
+      <ion-label  >
+        Correo
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label >
+        {{ CorreoUsuario }}
+        <ion-button  (click)="alerInputCorreo()" size="small">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item> 
+  </div>   
   <!--  //////////////////////////////////  -->
-   <!-- Segundo item Correo-->
-  <ion-input size="large" type="password" >
-    {{ variable4 }}
-    <ion-button  (click)="alerInputPassword()" >
-        <ion-icon name="pencil"></ion-icon>
-    </ion-button>
-  </ion-input>
+   <!-- Tercer item Password-->
+   <div class="datosUsuario">
+    <ion-item>
+      <ion-label  >
+        Password
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label >
+        {{ PasswordUsuario }}
+        <ion-button  (click)="alertInputPassword()" size="small">
+          <ion-icon name="pencil"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item> 
+  </div>  
   <!--  //////////////////////////////////  -->
-  <!-- Imagen para cmabiar foto-
-  <ion-button class="button buttin5" >
-    <img src="/assets/images/foto.jpg"> 
-  </ion-button>    
-   /////////////////////////////////////// -->
-   <ion-item button (click)="alerInputCorreo()" class="Avatar">
-     <ion-avatar class="AvatarUsr">
-      <img src="/src/assets/images/ojos.jpg"> 
-    </ion-avatar>
-   </ion-item>
+
 </ion-content>

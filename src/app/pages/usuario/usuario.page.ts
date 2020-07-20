@@ -11,17 +11,16 @@ import { RecetaService } from 'src/app/services/receta.service';
 })
 export class UsuarioPage implements OnInit {
 
-  titulos ="UsuarioN"; // Nombre de la  cabecera
+  titulos ="Usuario"; // Nombre de la  cabecera
 
-  Usuario ="NombreU";
   NombreUsuario;
-  variable3 = "Correo";
-  variable4 = "pass";
+  CorreoUsuario = "Correo";
+  PasswordUsuario = "pass";
   id =this.ar.snapshot.params.id;
   constructor(private recetaService:RecetaService, public alertCtr: AlertController,private router: Router, private ar: ActivatedRoute, private location: Location) {
-    this.NombreUsuario = this.recetaService.NombreUsuario(this.id).then((result:any) => {(result);})}
+    this.NombreUsuario = this.recetaService.NombreUsuario(this.id).then((result:any) => {(result);})
 
-  
+  }
 // Alerta con 1 input ----------------------------------------
   async alerInputUsuario(){
     const alertInp = await this.alertCtr.create({
@@ -57,7 +56,7 @@ export class UsuarioPage implements OnInit {
   // Alerta con 1 input ----------------------------------
   async alerInputCorreo(){
     const alertInp = await this.alertCtr.create({
-      header: this.variable3,
+      header: this.CorreoUsuario,
       subHeader: "cambiar correo" ,
       inputs: [
         {
@@ -77,7 +76,7 @@ export class UsuarioPage implements OnInit {
           text: 'Ok',
           handler: ( data ) => {
             console.log('Confirm Cancel:', data);
-            this.variable3 = data.InputCorreo;
+            this.CorreoUsuario = data.InputCorreo;
           }
         }
       ]
@@ -89,7 +88,7 @@ export class UsuarioPage implements OnInit {
   // Alerta con 2 input y confimacion de contraseña
   async alerInputPassword(){
     const alertInp = await this.alertCtr.create({
-      header: this.variable4,
+      header: this.PasswordUsuario,
       subHeader: "cambiar Password" ,
       inputs: [
         {
@@ -120,8 +119,8 @@ export class UsuarioPage implements OnInit {
           text: 'Ok',
           handler: ( data ) => {
             console.log('Confirm Cancel:', data); // Comfirma si las contraseña nueva son iguales y conoce la antigua contraseña
-            if (this.CompararString(data.InputNuevaPassRep,data.InputNuevaPass) && this.CompararString(data.InputAntiguaPass,this.variable4)){
-              this.variable4 = data.InputNuevaPass;
+            if (this.CompararString(data.InputNuevaPassRep,data.InputNuevaPass) && this.CompararString(data.InputAntiguaPass,this.PasswordUsuario)){
+              this.PasswordUsuario = data.InputNuevaPass;
             }
           }
         }
