@@ -26,7 +26,9 @@
       <button class="btn btn-primary btn-sm" class="derecha" *ngIf="listaIngredientes.length>1" (click)="deleteItem(ing)">Eliminar</button>
     </div>
 
-    <button (click)="addItemIngrediente()">Agregar +</button> 
+    <ion-button (click)="addItemIngrediente()">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-button> 
   </div>
 
 </ion-content>

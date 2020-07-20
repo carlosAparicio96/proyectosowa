@@ -21,7 +21,7 @@
                   <ion-select-option *ngFor="let c of ingredientes" value="{{ c.nombreIngrediente }}">{{ c.nombreIngrediente }}</ion-select-option>
                 </ion-select>
               </div>
-
+              <div></div>
             <div class="col">
               <input [(ngModel)]="ing.cantidad" class="colors" type="text" value="" color="danger" placeholder="Cantidad" >
             </div>
@@ -29,10 +29,12 @@
 
           <button class="btn btn-primary btn-sm" class="derecha" *ngIf="ingDetalle.length>1" (click)="deleteItem(ing)">Eliminar</button>
         </div>
-
-        <button (click)="addItemIngrediente()">Agregar +</button>
-      </div>
       
+        <ion-button slot="icon-only" (click)="addItemIngrediente()">
+          <ion-icon (click)="addItemIngrediente()" name="add-circle-outline"></ion-icon>
+        </ion-button>
+      </div>
+      <br>
 <ion-title  class="center">Pasos de tu receta</ion-title>
   <div class="dynamicModel">
 
