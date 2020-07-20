@@ -17,6 +17,10 @@ export class UsuarioPage implements OnInit {
   NombreUsuario ;
   CorreoUsuario ;
   PasswordUsuario ;
+  datos = this.fb.group({
+    nombreUsr: '' ,
+    idUsuario: Number(this.ar.snapshot.params.id)
+  });
   id =this.fb.group({
     idUsuario: Number(this.ar.snapshot.params.id)
   });
@@ -50,11 +54,8 @@ export class UsuarioPage implements OnInit {
           text: 'Ok',
           handler: ( data ) => {
             console.log('Confirm Cancel:', data);
-            var datos = this.fb.group({
-              nombreUsr: data.InputUsuario,
-              idUsuario: Number(this.ar.snapshot.params.id)
-            })
-            this.recetaService.ModificarNombredUsuario(datos.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);})
+            this.datos.value.nombreUsr = data.InputUsuario;
+            this.recetaService.ModificarNombredUsuario(this.datos.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);});
           }
         }
       ]
