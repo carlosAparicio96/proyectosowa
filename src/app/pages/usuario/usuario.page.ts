@@ -55,7 +55,8 @@ export class UsuarioPage implements OnInit {
           handler: ( data ) => {
             console.log('Confirm Cancel:', data);
             this.datos.value.nombreUsr = data.InputUsuario;
-            this.recetaService.ModificarNombredUsuario(this.datos.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);});
+            var result =this.recetaService.ModificarNombredUsuario(this.datos.value);
+            this.NombreUsuario=(result[0].nombreUsr);
           }
         }
       ]
