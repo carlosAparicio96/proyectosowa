@@ -9,11 +9,15 @@
 
 <ion-content>
 
+<ion-item *ngFor="let rec of receta">
+  <ion-card href="{{rec.idReceta}}/receta">
+    <img src="{{rec.fotoRec}}" />
+    <ion-card-header>
+      <ion-card-title>{{rec.nombreRec}}</ion-card-title>
+      <ion-card-title>{{rec.valoracion}}</ion-card-title>
+    </ion-card-header> 
+  </ion-card>
+</ion-item>
+
+
 </ion-content>
-
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
