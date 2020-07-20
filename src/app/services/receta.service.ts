@@ -248,6 +248,32 @@ completarPasos(data) {
     })
   }
 
+  eliminarIngDespensa(data) { //data= id Usuario, id Ingrediente
+    console.log("Service Eliminar Ing Receta",data)
+  
+    return new Promise((resolve, reject) => {
+      this.http.post(
+        `${apiUrl}deleteIngDesp`,
+        data
+      )
+        .subscribe(
+          (response: any) => {
+            try {
+              console.log('Response Service', response)
+              resolve(response)
+            } catch (error) {
+              console.log('error1', error)
+              reject(error)
+            }
+          },
+          error => {
+            console.log('error2', error)
+            reject(error)
+          }
+        )
+    })
+  }
+
 //--Carga datos para mostrar la receta--//
 
 getReceta(data) { //data= id de receta

@@ -4,7 +4,6 @@ import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
 import { RecetaService } from '../../services/receta.service';
 import {Location} from '@angular/common';
 
-
 @Component({
   selector: 'app-despensa',
   templateUrl: './despensa.page.html',
@@ -31,4 +30,20 @@ export class DespensaPage implements OnInit {
     this.router.navigate([url])
   }
 
-}
+  ingredienteEliminar(idIngred){
+    let ingItem = {
+      idUsuario : this.idUsuario,
+      idIngred : String(idIngred),
+    }
+
+    this.recetaService.eliminarIngDespensa(ingItem).then(result=> {
+    })
+    alert("Ingrediente eliminado de su despensa")
+    window.location.reload();
+
+
+  }
+
+  }
+
+  
