@@ -407,7 +407,7 @@ NombreUsuario(data) {// id del usuario == data
 
   return new Promise((resolve, reject) => {
     this.http.post(
-      `${apiUrl}BuscarNombreUsuario`,
+      `${apiUrl}BuscarNombUsuario`,
       data
     )
       .subscribe(

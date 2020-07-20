@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { Router, ActivatedRoute, ParamMap, Routes } from '@angular/router';
 import {Location} from '@angular/common';
 import { RecetaService } from 'src/app/services/receta.service';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-usuario',
@@ -13,12 +14,16 @@ export class UsuarioPage implements OnInit {
 
   titulos ="Usuario"; // Nombre de la  cabecera
 
-  NombreUsuario;
+  NombreUsuario ;
   CorreoUsuario = "Correo";
   PasswordUsuario = "pass";
-  id =this.ar.snapshot.params.id;
-  constructor(private recetaService:RecetaService, public alertCtr: AlertController,private router: Router, private ar: ActivatedRoute, private location: Location) {
-    this.NombreUsuario = this.recetaService.NombreUsuario(this.id).then((result:any) => {(result);})
+  id =this.fb.group({
+    idUsuario: Number(this.ar.snapshot.params.id)
+  });
+
+  
+  constructor(private fb: FormBuilder,private recetaService:RecetaService, public alertCtr: AlertController,private router: Router, private ar: ActivatedRoute, private location: Location) {
+    this.recetaService.NombreUsuario(this.id.value).then((result:any) => {this.NombreUsuario=(result[0].nombreUsr);})
 
   }
 // Alerta con 1 input ----------------------------------------

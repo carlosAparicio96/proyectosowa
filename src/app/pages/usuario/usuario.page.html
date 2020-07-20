@@ -5,17 +5,17 @@
   <div class="datosUsuario">
   <ion-item button (click)="alerInputCorreo()" class="Avatar">
     <ion-avatar class="AvatarUsr">
-     <img src="/src/assets/images/foto.jpg"> 
+     <img src="/src/assets/images/foto.jpg" > 
    </ion-avatar>
   </ion-item>
   </div>
   <!-- Primer item Usuario-->
   <div class="datosUsuario">
     <ion-item>
-  <ion-label   >
-    Usuario
-  </ion-label>
-  </ion-item>
+      <ion-label   >
+         Usuario
+      </ion-label>
+   </ion-item>
   <ion-item>
     <ion-label  >
       {{ NombreUsuario }}
@@ -51,9 +51,9 @@
       </ion-label>
     </ion-item>
     <ion-item>
-      <ion-label >
+      <ion-label type="Password" >
         {{ PasswordUsuario }}
-        <ion-button  (click)="alertInputPassword()" size="small">
+        <ion-button  (click)="alerInputPassword()" size="small">
           <ion-icon name="pencil"></ion-icon>
         </ion-button>
       </ion-label>
